@@ -3,6 +3,8 @@
 
 [Logstash](logstash.net) output for [InfluxDB](influxdb.org) based on the existing udp output.
 
+The ruby-code builds a JSON string (see [InfluxDB documentation](influxdb.com/docs/v0.8/api/reading_and_writing_data.html#writing-data-through-json-+-udp)) and sends this through UDP to the InfluxDB server.
+
 ###Installation 
 Place the file **src/influxdb.rb** into the folder **lib/logstash/outputs**
 
@@ -38,10 +40,14 @@ output {
 ```
 
 ####Name:
-*ToDo*
+An array of the parts of the name of the series in InfluxDB.
+This name is created by concattenating the elements of the array. 
 
 ####Columns:
-*ToDo*
+An array of the names of the columns to be used in the InfluxDB series.
 
 ####Points:
-*ToDo*
+A hash of the values and the types.
+- 'n' = numeric value
+- 'f' = floating value
+- 'c'(or anything else) = character value 
