@@ -41,7 +41,7 @@ output {
 
 ####Name:
 An array of the parts of the name of the series in InfluxDB.
-This name is created by concattenating the elements of the array. 
+This name is created by concattenating the elements of the array with a dot (.) as separator. 
 
 ####Columns:
 An array of the names of the columns to be used in the InfluxDB series.
