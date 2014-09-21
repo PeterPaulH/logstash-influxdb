@@ -62,9 +62,12 @@ class LogStash::Outputs::InfluxDB < LogStash::Outputs::Base
     cCols = aCols.join(",")
     cPnts = aPnts.join(",")
     cMessage = '[ { "name" : "' + cName + '", "columns" : [' + cCols + '], "points" : [[' + cPnts + ']]}]' + "\n"
-    @logger.debug("INFLUXDB: sending ", :host => @host, :port => @port, :txtmessage => cMessage )
-
-    @socket.send(cMessage, 0, @host, @port)
+    @logger.debug("INFLUXDB: sending ", :host => @host, :port => @port, :cMessage => cMessage )
+    begin
+      @socket.send(cMessage, 0, @host, @port)
+    rescue Errno::EPIPE, Errno::ECONNRESET => e
+      @logger.warn("INFLUXDB ERROR", :exception => e, :cMessage => cMessage )
+    end
   end
 
 end # class LogStash::Outputs::InfluxDB
