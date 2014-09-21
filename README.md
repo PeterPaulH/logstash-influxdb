@@ -1,5 +1,4 @@
 #logstash-influxdb
-=================
 
 [Logstash](logstash.net) output for [InfluxDB](influxdb.org) based on the existing udp output.
 
