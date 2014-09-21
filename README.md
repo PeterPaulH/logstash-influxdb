@@ -9,16 +9,19 @@ Place the file **src/influxdb.rb** into the folder **lib/logstash/outputs**
 ###InfluxDB-settings
 Somewhere in the **config.toml** file:
 
-`[input_plugins]
+```
+[input_plugins]
   [input_plugins.udp]
     enabled = true
     port = 4444
-    database = "<database-name>"`
+    database = "<database-name>"
+```
 
 ###Logstash-settings
 In the config-file.
 
-`output {
+```
+output {
   ...
   influxdb {
     host     => "<hostname or IP of InfluxDB-server>"
@@ -31,7 +34,8 @@ In the config-file.
                 , "%{num_value}", "f" ]
   }
   ...
-}`
+}
+```
 
 ####Name:
 
