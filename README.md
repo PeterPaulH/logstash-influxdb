@@ -3,10 +3,10 @@ logstash-influxdb
 
 Logstash output for InfluxDB based on the existing udp output.
 
-* Installation 
+#Installation 
 Place the file src/influxdb.rb into the folder lib/logstash/outputs
 
-* InfluxDB-settings
+#InfluxDB-settings
 Somewhere in the config.toml file:
 
 [input_plugins]
@@ -15,7 +15,7 @@ Somewhere in the config.toml file:
     port = 4444
     database = "<database-name>"
 
-* Logstash-settings
+#Logstash-settings
 
 output {
   ...
@@ -32,8 +32,8 @@ output {
   ...
 }
 
-Name:
+##Name:
 
-Columns:
+##Columns:
 
-Points:
+##Points:
