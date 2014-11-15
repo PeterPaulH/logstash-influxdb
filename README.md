@@ -1,8 +1,8 @@
 #logstash-influxdb
 
-[Logstash](logstash.net) output for [InfluxDB](influxdb.org) based on the existing udp output.
+[Logstash](http://logstash.net) output for [InfluxDB](http://influxdb.org) based on the existing udp output.
 
-The ruby-code builds a JSON string (see [InfluxDB documentation](influxdb.com/docs/v0.8/api/reading_and_writing_data.html#writing-data-through-json-+-udp)) and sends this through UDP to the InfluxDB server.
+The ruby-code builds a JSON string (see [InfluxDB documentation](http://influxdb.com/docs/v0.8/api/reading_and_writing_data.html#writing-data-through-json-+-udp)) and sends this through UDP to the InfluxDB server.
 
 ###Installation 
 Place the file **src/influxdb.rb** into the folder **lib/logstash/outputs**
